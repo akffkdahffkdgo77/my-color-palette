@@ -1,30 +1,46 @@
-import { useState } from 'react';
+import { KeyboardEvent, MouseEvent, useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-function neutralColors() {
-    return Array.from(Array(21)).map((_, index) => `hsla(0deg, 0%, ${index * 5}%, 1)`);
-}
-
-function generateColors() {
-    const red = Array.from(Array(20)).map((_, index) => `hsla(${index * 3}deg, 100%, 50%, 1)`); // 0deg, 100%, 50% -> 57deg, 100%, 50%
-    const green = Array.from(Array(21)).map((_, index) => `hsla(${60 + index * 3}deg, 100%, 50%, 1)`); // 60deg, 100%, 50% -> 120deg, 100%, 50%
-    const blue = Array.from(Array(20)).map((_, index) => `hsla(${120 + (index + 1) * 3}deg, 100%, 50%, 1)`); // 123deg, 100%, 50% -> 180deg, 100%, 50%
-    const purple = Array.from(Array(20)).map((_, index) => `hsla(${180 + (index + 1) * 3}deg, 100%, 50%, 1)`); // 183deg, 100%, 50% -> 240deg, 100%, 50%
-    const pink = Array.from(Array(20)).map((_, index) => `hsla(${240 + (index + 1) * 3}deg, 100%, 50%, 1)`); // 243deg, 100%, 50% -> 300deg, 100%, 50%
-    const last = Array.from(Array(19)).map((_, index) => `hsla(${300 + (index + 1) * 3 === 360 ? 0 : 300 + (index + 1) * 3}deg, 100%, 50%, 1)`); // 300deg, 100%, 50% -> 360deg, 100%, 50%
-    return [...red, ...green, ...blue, ...purple, ...pink, ...last];
-}
+import { generateColors, HEX, neutralColors, OPACITY } from 'utils';
 
 export default function Create() {
+    const navigate = useNavigate();
     const [name, setName] = useState('');
-    const [colors, setColors] = useState<string[]>([]);
-    const [selected, setSelected] = useState('hsla(258deg, 80%, 10%, 1)');
-    const [hue, setHue] = useState(0);
-    const [saturation, setSaturation] = useState(0);
-    const [lightness, setLightness] = useState(0);
 
-    const onClick = (color: string) => {
+    const [colors, setColors] = useState<string[]>([]);
+    const [hexColors, setHexColors] = useState<string[]>([]);
+
+    const [hue, setHue] = useState(258);
+    const [saturation, setSaturation] = useState(80);
+    const [lightness, setLightness] = useState(10);
+
+    const [selected, setSelected] = useState('hsla(258deg, 80%, 10%, 1)');
+    const [selectedHex, setSelectedHex] = useState('11052C');
+
+    const onClick = (e: MouseEvent<HTMLDivElement> | KeyboardEvent<HTMLDivElement>, color: string) => {
+        const rgb = e.currentTarget.style.backgroundColor;
+        const isRGBA = rgb.includes('rgb(') ? false : true;
+        const rgbArray = rgb.includes('rgb(') ? rgb.replace('rgb(', '').replace(')', '').split(', ') : rgb.replace('rgba(', '').replace(')', '').split(', ');
+
+        const hexCode = Array.from([0, 0, 1, 1, 2, 2, 3]).reduce((prev, cur, index) => {
+            const divided = Number(rgbArray[cur]) / 16;
+            const remainder = Number(rgbArray[cur]) % 16;
+            const converted = Math.floor(index % 2 === 0 ? divided : remainder);
+
+            let rgbToHex = '';
+            if (cur === 3 && isRGBA) {
+                rgbToHex = prev + OPACITY[Number(rgbArray[3].replace('0.', '')) - 1];
+            } else if (cur === 3) {
+                return prev;
+            } else {
+                rgbToHex = `${prev}${converted > 9 ? HEX[converted] : converted}`;
+            }
+            return rgbToHex;
+        }, '');
+
+        setSelectedHex(`#${hexCode}`);
+
         const rgba = color.split('(')[1].split(')')[0].split(',');
         setSelected(color);
         setHue(Number(rgba[0].replace('deg', '')));
@@ -32,11 +48,23 @@ export default function Create() {
         setLightness(Number(rgba[2].replace('%', '')));
     };
 
-    const handleSelect = () => setColors((prev) => [...prev, selected]);
+    const handleSelect = () => {
+        setColors((prev) => [...prev, selected]);
+        setHexColors((prev) => [...prev, selectedHex]);
+    };
 
     const handleReset = () => setColors([]);
 
-    // TODO: LocalStorage에 저장하기
+    const handleSave = () => {
+        if (hexColors.length) {
+            const prev = JSON.parse(localStorage.getItem('colors') || '[]');
+            const newColors = [...prev, { name: name || 'MY COLOR PALETTE', colors: hexColors }];
+            localStorage.setItem('colors', JSON.stringify(newColors));
+            navigate('/');
+        } else {
+            alert('색상을 하나 이상 선택해 주세요!');
+        }
+    };
 
     return (
         <main style={{ backgroundColor: selected }} className="w-full min-h-screen">
@@ -56,8 +84,8 @@ export default function Create() {
                                         key={index}
                                         style={{ backgroundColor: color }}
                                         className="w-[25px] h-[25px] rounded-full border border-slate-600"
-                                        onClick={() => onClick(color)}
-                                        onKeyDown={() => onClick(color)}
+                                        onClick={(e) => onClick(e, color)}
+                                        onKeyDown={(e) => onClick(e, color)}
                                     />
                                 ))}
                             </div>
@@ -71,8 +99,8 @@ export default function Create() {
                                         tabIndex={0}
                                         style={{ backgroundColor: color }}
                                         className="w-[35px] h-[35px] rounded-full border border-slate-600"
-                                        onClick={() => onClick(color)}
-                                        onKeyDown={() => onClick(color)}
+                                        onClick={(e) => onClick(e, color)}
+                                        onKeyDown={(e) => onClick(e, color)}
                                     />
                                 ))}
                             </div>
@@ -87,8 +115,8 @@ export default function Create() {
                                         tabIndex={0}
                                         className="w-full h-5 border-2 border-[#11052C]"
                                         style={{ backgroundColor: `hsl(${hue}deg, ${saturation}%, ${value}%)` }}
-                                        onClick={() => onClick(`hsla(${hue}deg, ${saturation}%, ${value}%, 1)`)}
-                                        onKeyDown={() => onClick(`hsla(${hue}deg, ${saturation}%, ${value}%, 1)`)}
+                                        onClick={(e) => onClick(e, `hsla(${hue}deg, ${saturation}%, ${value}%, 1)`)}
+                                        onKeyDown={(e) => onClick(e, `hsla(${hue}deg, ${saturation}%, ${value}%, 1)`)}
                                     />
                                 ))}
                             </div>
@@ -103,8 +131,8 @@ export default function Create() {
                                         tabIndex={0}
                                         className="w-[50px] h-5 border-2 border-[#11052C]"
                                         style={{ backgroundColor: `hsla(${hue}deg, ${saturation}%, ${lightness}%, ${((index + 1) * 10) / 100})` }}
-                                        onClick={() => onClick(`hsla(${hue}deg, ${saturation}%, ${lightness}%, ${((index + 1) * 10) / 100})`)}
-                                        onKeyDown={() => onClick(`hsla(${hue}deg, ${saturation}%, ${lightness}%, ${((index + 1) * 10) / 100})`)}
+                                        onClick={(e) => onClick(e, `hsla(${hue}deg, ${saturation}%, ${lightness}%, ${((index + 1) * 10) / 100})`)}
+                                        onKeyDown={(e) => onClick(e, `hsla(${hue}deg, ${saturation}%, ${lightness}%, ${((index + 1) * 10) / 100})`)}
                                     />
                                 ))}
                             </div>
@@ -121,11 +149,14 @@ export default function Create() {
                                     onChange={(e) => setName(e.target.value)}
                                 />
                             </label>
-                            <button className="mt-10 border rounded-md border-[#11052C] px-[5px] font-mono font-bold uppercase mr-2.5 text-[18px]" type="button" onClick={handleReset}>
+                            <button className="mt-10 border rounded-md border-[#11052C] px-[5px] font-mono font-bold uppercase text-[18px]" type="button" onClick={handleReset}>
                                 Reset
                             </button>
-                            <button className="border rounded-md border-[#11052C] px-[5px] font-mono font-bold uppercase text-[18px]" type="button" onClick={handleSelect}>
+                            <button className="mx-2.5 border rounded-md border-[#11052C] px-[5px] font-mono font-bold uppercase text-[18px]" type="button" onClick={handleSelect}>
                                 Select
+                            </button>
+                            <button className="border rounded-md border-[#11052C] px-[5px] font-mono font-bold uppercase text-[18px]" type="button" onClick={handleSave}>
+                                Save
                             </button>
                         </div>
                     </div>
@@ -136,9 +167,9 @@ export default function Create() {
                         <div className="flex flex-col w-full border border-[#11052C] rounded-md overflow-hidden">
                             <div className="p-5 pb-0 bg-white min-w-[500px] rounded-b-none">
                                 <ul className="w-full h-[300px] rounded-md border-[#FAF4FF] flex">
-                                    {colors?.map((color) => (
+                                    {colors?.map((color, index) => (
                                         <li style={{ backgroundColor: color }} key={color} className="group w-full h-full flex items-end ">
-                                            <span className="w-full text-[10px] font-bold text-[#FAF4FF] bg-[#0000004d] p-[5px]">{`hsl(${color.split('hsla(')[1].replace('%, 1)', '')})`}</span>
+                                            <span className="w-full text-[10px] font-bold text-[#FAF4FF] bg-[#0000004d] p-[5px]">{hexColors[index]}</span>
                                         </li>
                                     ))}
                                 </ul>
