@@ -1,5 +1,9 @@
 # my color palette
 
+<img width="921" alt="스크린샷 2022-10-15 오후 5 13 24" src="https://user-images.githubusercontent.com/52883505/195977155-eedfbe7d-ed46-4800-b9af-24eeac2e7b29.png">
+
+<img width="1513" alt="스크린샷 2022-10-15 오후 5 13 46" src="https://user-images.githubusercontent.com/52883505/195977168-a2061eac-934a-421d-8e6e-76c615b2635d.png">
+
 ## 목표
 
 자주 사용하는 color palette를 저장하고 png 파일로 다운로드하는 간단한 프로젝트
