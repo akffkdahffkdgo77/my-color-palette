@@ -50,7 +50,6 @@ export default function ColorsList({ name, colors }: IProps) {
                     {colors.map((color) => (
                         <li key={color} style={{ backgroundColor: color }} className="group w-full h-full flex items-end">
                             <button
-                                style={{ backgroundColor: color }}
                                 type="button"
                                 className={`${isCopied ? 'text-green-300' : 'text-[#FAF4FF]'} group-hover:inline p-[5px] text-[12px] hidden bg-[#9e9e9e4d]`}
                                 onClick={(e) => handleCopy(e, color)}

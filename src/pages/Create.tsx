@@ -8,7 +8,7 @@ import NeutralColorPalette from 'components/NeutralColorPalette';
 import OpacityColorPalette from 'components/OpacityColorPalette';
 import PalettePreview from 'components/PalettePreview';
 import SimilarColorPalette from 'components/SimilarColorPalette';
-import { HEX, OPACITY } from 'utils';
+import { convertToHex, OPACITY } from 'utils';
 
 export default function Create() {
     const navigate = useNavigate();
@@ -29,18 +29,12 @@ export default function Create() {
         const isRGBA = rgb.includes('rgb(') ? false : true;
         const rgbArray = rgb.includes('rgb(') ? rgb.replace('rgb(', '').replace(')', '').split(', ') : rgb.replace('rgba(', '').replace(')', '').split(', ');
 
-        const hexCode = Array.from([0, 0, 1, 1, 2, 2, 3]).reduce((prev, cur, index) => {
-            const divided = Number(rgbArray[cur]) / 16;
-            const remainder = Number(rgbArray[cur]) % 16;
-            const converted = Math.floor(index % 2 === 0 ? divided : remainder);
-
+        const hexCode = Array.from(Array(isRGBA ? 4 : 3)).reduce((prev, cur, index) => {
             let rgbToHex = '';
-            if (cur === 3 && isRGBA) {
+            if (index === 3) {
                 rgbToHex = prev + OPACITY[Number(rgbArray[3].replace('0.', '')) - 1];
-            } else if (cur === 3) {
-                return prev;
             } else {
-                rgbToHex = `${prev}${converted > 9 ? HEX[converted] : converted}`;
+                rgbToHex = `${prev}${convertToHex(rgbArray[index])}`;
             }
             return rgbToHex;
         }, '');
