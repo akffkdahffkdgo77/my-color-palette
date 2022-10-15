@@ -47,8 +47,8 @@ export default function ColorsList({ name, colors }: IProps) {
         <div className="flex flex-col">
             <div className="p-5 pb-0 bg-[#FAF4FF] rounded-md rounded-b-none" tabIndex={-1} role="button" onClick={handleDownload} onKeyDown={(e) => e.preventDefault()}>
                 <ul className="w-[200px] h-[300px] rounded-md border-[#FAF4FF] flex flex-col">
-                    {colors.map((color) => (
-                        <li key={color} style={{ backgroundColor: color }} className="group w-full h-full flex items-end">
+                    {colors.map((color, index) => (
+                        <li key={`${color}-${index}`} style={{ backgroundColor: color }} className="group w-full h-full flex items-end">
                             <button
                                 type="button"
                                 className={`${isCopied ? 'text-green-300' : 'text-[#FAF4FF]'} group-hover:inline p-[5px] text-[12px] hidden bg-[#9e9e9e4d]`}
