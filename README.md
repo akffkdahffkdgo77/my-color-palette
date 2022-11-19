@@ -1,12 +1,16 @@
-# my color palette
+# My Color Palette
 
 <img width="921" alt="스크린샷 2022-10-15 오후 5 13 24" src="https://user-images.githubusercontent.com/52883505/195977155-eedfbe7d-ed46-4800-b9af-24eeac2e7b29.png">
 
 <img width="1513" alt="스크린샷 2022-10-15 오후 5 13 46" src="https://user-images.githubusercontent.com/52883505/195977168-a2061eac-934a-421d-8e6e-76c615b2635d.png">
 
-## 목표
+## Weekly Clone Coding
 
-자주 사용하는 color palette를 저장하고 png 파일로 다운로드하는 간단한 프로젝트
+Part 3 of [Weekly Clone Coding Challenge](https://github.com/namiein/weekly-clone-coding)
+
+## Project Description
+
+Clone Coding Color Palette Generator
 
 ## v1.0.0 (2022.10.09 ~ 2022.10.15)
 
@@ -21,7 +25,7 @@
     -   초기화, 선택, 저장 기능
     -   선택한 색상 변경하기
 
-## v1.0.1 (예정)
+## v1.0.1 (TO-BE)
 
 -
 
@@ -36,7 +40,3 @@
 
 -   ESLint - AirBnB
 -   Prettier
-
-## Deploy
-
--   gh-pages
