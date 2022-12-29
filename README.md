@@ -27,7 +27,69 @@ Clone Coding Color Palette Generator
 
 ## v1.0.1 (TO-BE)
 
--
+## Folder Structure
+
+```
+.
+├── app
+│   └── App.tsx
+├── components
+│   ├── create
+│   │   ├── DefaultColorPalette.tsx
+│   │   ├── Form.tsx
+│   │   ├── NeutralColorPalette.tsx
+│   │   ├── OpacityColorPalette.tsx
+│   │   ├── PalettePreview.tsx
+│   │   ├── SimilarColorPalette.tsx
+│   │   └── index.ts
+│   └── home
+│       └── ColorsList.tsx
+├── index.tsx
+├── pages
+│   ├── Create.tsx
+│   └── Home.tsx
+├── react-app-env.d.ts
+ gykim  ~/Documents/workspaces/private/my-color-palette/src   main ±  tree .
+.
+├── app
+│   └── App.tsx
+├── components
+│   ├── ColorsList
+│   │   ├── index.tsx
+│   │   └── types.ts
+│   ├── DefaultColorPalette
+│   │   ├── index.tsx
+│   │   └── types.ts
+│   ├── Form
+│   │   ├── index.tsx
+│   │   └── types.ts
+│   ├── NeutralColorPalette
+│   │   ├── index.tsx
+│   │   └── types.ts
+│   ├── OpacityColorPalette
+│   │   ├── index.tsx
+│   │   └── types.ts
+│   ├── PalettePreview
+│   │   ├── index.tsx
+│   │   └── types.ts
+│   ├── SimilarColorPalette
+│   │   ├── index.tsx
+│   │   └── types.ts
+│   └── index.ts
+├── index.tsx
+├── pages
+│   ├── Create
+│   │   └── index.tsx
+│   └── Home
+│       └── index.tsx
+├── react-app-env.d.ts
+├── routes
+│   └── index.tsx
+├── styles
+│   └── index.css
+└── utils
+    └── index.ts
+```
 
 ## NPM Packages
 
