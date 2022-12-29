@@ -1,16 +1,16 @@
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Create from 'pages/Create';
 import Home from 'pages/Home';
 
 function Router() {
     return (
-        <HashRouter>
+        <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/create" element={<Create />} />
             </Routes>
-        </HashRouter>
+        </BrowserRouter>
     );
 }
 export default Router;

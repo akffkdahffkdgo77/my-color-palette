@@ -3,12 +3,9 @@ import { KeyboardEvent, MouseEvent, useEffect, useRef, useState } from 'react';
 import html2canvas from 'html2canvas';
 import { Link } from 'react-router-dom';
 
-interface IProps {
-    name: string;
-    colors: string[];
-}
+import { IColorsList } from 'components/ColorsList/types';
 
-export default function ColorsList({ name, colors }: IProps) {
+export default function ColorsList({ name, colors }: IColorsList) {
     const timerId = useRef<NodeJS.Timeout>();
     const [isCopied, setIsCopied] = useState(false);
 

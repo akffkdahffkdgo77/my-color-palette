@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import ColorsList from 'components/home/ColorsList';
+import { ColorsList } from 'components';
 import { COLORS } from 'utils';
 
 export default function Home() {

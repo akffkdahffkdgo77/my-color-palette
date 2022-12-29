@@ -1,12 +1,7 @@
-import { KeyboardEvent, MouseEvent } from 'react';
-
+import { IDefaultColorPalette } from 'components/DefaultColorPalette/types';
 import { generateColors } from 'utils';
 
-interface IProps {
-    onClick: (e: MouseEvent<HTMLDivElement> | KeyboardEvent<HTMLDivElement>, color: string) => void;
-}
-
-export default function DefaultColorPalette({ onClick }: IProps) {
+export default function DefaultColorPalette({ onClick }: IDefaultColorPalette) {
     return (
         <>
             <h3 className="text-lg font-mono font-bold uppercase">Color</h3>

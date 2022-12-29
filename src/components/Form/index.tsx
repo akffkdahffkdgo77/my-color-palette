@@ -1,13 +1,6 @@
-import { Dispatch, FormEvent, SetStateAction } from 'react';
+import { IForm } from 'components/Form/types';
 
-interface IProps {
-    setName: Dispatch<SetStateAction<string>>;
-    handleSave: (e: FormEvent<HTMLFormElement>) => void;
-    handleReset: () => void;
-    handleSelect: () => void;
-}
-
-export default function Form({ setName, handleSave, handleReset, handleSelect }: IProps) {
+export default function Form({ setName, handleSave, handleReset, handleSelect }: IForm) {
     return (
         <form onSubmit={handleSave}>
             <label htmlFor="name" className="flex flex-col text-[10px]">

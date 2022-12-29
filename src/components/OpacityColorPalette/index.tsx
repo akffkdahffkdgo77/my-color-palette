@@ -1,13 +1,6 @@
-import { KeyboardEvent, MouseEvent } from 'react';
+import { IOpacityColorPalette } from 'components/OpacityColorPalette/types';
 
-interface IProps {
-    hue: number;
-    saturation: number;
-    lightness: number;
-    onClick: (e: MouseEvent<HTMLDivElement> | KeyboardEvent<HTMLDivElement>, color: string) => void;
-}
-
-export default function OpacityColorPalette({ hue, saturation, lightness, onClick }: IProps) {
+export default function OpacityColorPalette({ hue, saturation, lightness, onClick }: IOpacityColorPalette) {
     return (
         <>
             <h3 className="text-lg font-mono font-bold uppercase">Opacity</h3>

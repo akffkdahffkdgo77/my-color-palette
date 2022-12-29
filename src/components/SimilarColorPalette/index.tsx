@@ -1,12 +1,6 @@
-import { KeyboardEvent, MouseEvent } from 'react';
+import { ISimilarColorPalette } from 'components/SimilarColorPalette/types';
 
-interface IProps {
-    hue: number;
-    saturation: number;
-    onClick: (e: MouseEvent<HTMLDivElement> | KeyboardEvent<HTMLDivElement>, color: string) => void;
-}
-
-export default function SimilarColorPalette({ hue, saturation, onClick }: IProps) {
+export default function SimilarColorPalette({ hue, saturation, onClick }: ISimilarColorPalette) {
     return (
         <>
             <h3 className="text-lg font-mono font-bold uppercase">Similar</h3>

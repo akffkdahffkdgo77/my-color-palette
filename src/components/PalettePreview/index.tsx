@@ -1,13 +1,6 @@
-import { FormEvent, RefObject } from 'react';
+import { IPalettePreview } from 'components/PalettePreview/types';
 
-interface IProps {
-    inputRef: RefObject<HTMLInputElement>;
-    colors: string[];
-    hexColors: string[];
-    handleColorChange: (e: FormEvent<HTMLInputElement>, index: number) => void;
-}
-
-export default function PalettePreview({ inputRef, hexColors, colors, handleColorChange }: IProps) {
+export default function PalettePreview({ inputRef, hexColors, colors, handleColorChange }: IPalettePreview) {
     return (
         <div className="p-5 pb-0 bg-white min-w-[500px] rounded-b-none">
             <ul className="w-full h-[300px] rounded-md border-[#FAF4FF] flex">

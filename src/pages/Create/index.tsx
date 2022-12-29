@@ -2,7 +2,7 @@ import { FormEvent, KeyboardEvent, MouseEvent, useEffect, useRef, useState } fro
 
 import { Link, useNavigate } from 'react-router-dom';
 
-import { DefaultColorPalette, NeutralColorPalette, OpacityColorPalette, PalettePreview, SimilarColorPalette, Form } from 'components/create';
+import { DefaultColorPalette, NeutralColorPalette, OpacityColorPalette, PalettePreview, SimilarColorPalette, Form } from 'components';
 import { convertToHex, OPACITY } from 'utils';
 
 export default function Create() {

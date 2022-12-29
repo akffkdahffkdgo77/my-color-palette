@@ -1,12 +1,7 @@
-import { KeyboardEvent, MouseEvent } from 'react';
-
+import { INeutralColorPalette } from 'components/NeutralColorPalette/types';
 import { neutralColors } from 'utils';
 
-interface IProps {
-    onClick: (e: MouseEvent<HTMLDivElement> | KeyboardEvent<HTMLDivElement>, color: string) => void;
-}
-
-export default function NeutralColorPalette({ onClick }: IProps) {
+export default function NeutralColorPalette({ onClick }: INeutralColorPalette) {
     return (
         <>
             <h3 className="text-lg font-mono font-bold uppercase">Neutral</h3>
