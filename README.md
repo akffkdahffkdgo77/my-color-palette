@@ -36,6 +36,7 @@
   <br/>
   <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" alt="React Router" />
   <img src="https://img.shields.io/badge/-html2canvas-black?style=for-the-badge" alt="html2canvas" />
+  <br/>
   <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
 
   <h3>🪄 Code Conventions</h3>
