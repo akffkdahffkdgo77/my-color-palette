@@ -1,4 +1,4 @@
-export type ColorsListPropsType = {
+export type ColorsType = {
     name: string;
     colors: string[];
 };

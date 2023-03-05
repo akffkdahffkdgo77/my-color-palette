@@ -1,6 +1,6 @@
-import { IOpacityColorPalette } from 'components/OpacityColorPalette/types';
+import type { OpacityColorPalettePropsType } from 'components/OpacityColorPalette/types';
 
-export default function OpacityColorPalette({ hue, saturation, lightness, onClick }: IOpacityColorPalette) {
+export default function OpacityColorPalette({ hue, saturation, lightness, onClick }: OpacityColorPalettePropsType) {
     return (
         <>
             <h3 className="text-lg font-mono font-bold uppercase">Opacity</h3>

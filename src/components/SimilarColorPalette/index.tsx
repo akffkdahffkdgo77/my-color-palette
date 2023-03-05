@@ -1,6 +1,6 @@
-import { ISimilarColorPalette } from 'components/SimilarColorPalette/types';
+import type { SimilarColorPalettePropsType } from 'components/SimilarColorPalette/types';
 
-export default function SimilarColorPalette({ hue, saturation, onClick }: ISimilarColorPalette) {
+export default function SimilarColorPalette({ hue, saturation, onClick }: SimilarColorPalettePropsType) {
     return (
         <>
             <h3 className="text-lg font-mono font-bold uppercase">Similar</h3>

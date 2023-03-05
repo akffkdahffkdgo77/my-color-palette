@@ -1,8 +1,8 @@
-import { IForm } from 'components/Form/types';
+import type { FormPropsType } from 'components/Form/types';
 
-export default function Form({ setName, handleSave, handleReset, handleSelect }: IForm) {
+export default function Form({ setName, onSave, onReset, onSelect }: FormPropsType) {
     return (
-        <form onSubmit={handleSave}>
+        <form autoComplete="off" onSubmit={onSave}>
             <label htmlFor="name" className="flex flex-col text-[10px]">
                 <p className="hidden">NAME</p>
                 <input
@@ -16,10 +16,10 @@ export default function Form({ setName, handleSave, handleReset, handleSelect }:
                     onChange={(e) => setName(e.target.value)}
                 />
             </label>
-            <button className="mt-10 border rounded-md border-[#11052C] px-[5px] font-mono font-bold uppercase text-[18px]" type="button" onClick={handleReset}>
+            <button className="mt-10 border rounded-md border-[#11052C] px-[5px] font-mono font-bold uppercase text-[18px]" type="button" onClick={onReset}>
                 Reset
             </button>
-            <button className="mx-2.5 border rounded-md border-[#11052C] px-[5px] font-mono font-bold uppercase text-[18px]" type="button" onClick={handleSelect}>
+            <button className="mx-2.5 border rounded-md border-[#11052C] px-[5px] font-mono font-bold uppercase text-[18px]" type="button" onClick={onSelect}>
                 Select
             </button>
             <button className="border rounded-md border-[#11052C] px-[5px] font-mono font-bold uppercase text-[18px]" type="submit">

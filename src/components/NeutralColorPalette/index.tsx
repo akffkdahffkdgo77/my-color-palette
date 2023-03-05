@@ -1,7 +1,8 @@
-import { INeutralColorPalette } from 'components/NeutralColorPalette/types';
 import { neutralColors } from 'utils';
 
-export default function NeutralColorPalette({ onClick }: INeutralColorPalette) {
+import type { NeutralColorPalettePropsType } from 'components/NeutralColorPalette/types';
+
+export default function NeutralColorPalette({ onClick }: NeutralColorPalettePropsType) {
     return (
         <>
             <h3 className="text-lg font-mono font-bold uppercase">Neutral</h3>

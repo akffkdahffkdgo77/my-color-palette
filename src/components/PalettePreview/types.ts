@@ -1,6 +1,9 @@
-export interface IPalettePreview {
-    inputRef: React.RefObject<HTMLInputElement>;
+export type PalettePreviewPropsType = {
+    selectedInputValue: { color: string; index: number };
     colors: string[];
     hexColors: string[];
-    handleColorChange: (e: React.FormEvent<HTMLInputElement>, index: number) => void;
-}
+    setColors: React.Dispatch<React.SetStateAction<string[]>>;
+    setHexColors: React.Dispatch<React.SetStateAction<string[]>>;
+    setSelectedInputValue: React.Dispatch<React.SetStateAction<{ color: string; index: number }>>;
+    onColorChange: (e: React.FormEvent<HTMLInputElement>, index: number) => void;
+};

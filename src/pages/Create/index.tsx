@@ -1,10 +1,11 @@
-import { FormEvent, KeyboardEvent, MouseEvent, useEffect, useRef, useState } from 'react';
+import { FormEvent, KeyboardEvent, MouseEvent, useState } from 'react';
 
 import { Link, useNavigate } from 'react-router-dom';
 
 import { DefaultColorPalette, NeutralColorPalette, OpacityColorPalette, PalettePreview, SimilarColorPalette, Form } from 'components';
 import { convertToHex, OPACITY } from 'utils';
 
+// TODO: Context API
 export default function Create() {
     const navigate = useNavigate();
     const [name, setName] = useState('');
@@ -20,9 +21,9 @@ export default function Create() {
     const [selectedHex, setSelectedHex] = useState('11052C');
     const [selectedInputValue, setSelectedInputValue] = useState({ color: '', index: 0 });
 
-    const onClick = (e: MouseEvent<HTMLDivElement> | KeyboardEvent<HTMLDivElement>, color: string) => {
+    const handleClick = (e: MouseEvent<HTMLDivElement> | KeyboardEvent<HTMLDivElement>, color: string) => {
         const rgb = e.currentTarget.style.backgroundColor;
-        const isRGBA = rgb.includes('rgb(') ? false : true;
+        const isRGBA = !rgb.includes('rgb(');
         const rgbArray = rgb.includes('rgb(') ? rgb.replace('rgb(', '').replace(')', '').split(', ') : rgb.replace('rgba(', '').replace(')', '').split(', ');
 
         const hexCode = Array.from(Array(isRGBA ? 4 : 3)).reduce((prev, cur, index) => {
@@ -61,34 +62,10 @@ export default function Create() {
             localStorage.setItem('colors', JSON.stringify(newColors));
             navigate('/');
         } else {
+            // eslint-disable-next-line no-alert
             alert('색상을 하나 이상 선택해 주세요!');
         }
     };
-
-    const inputRef = useRef<HTMLInputElement>(null);
-
-    useEffect(() => {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        function handleClickOutsideSelect(event: any) {
-            if (inputRef.current && !inputRef.current.contains(event.target as Node) && selectedInputValue.color) {
-                const hex = selectedInputValue.color.replace('#', '');
-                const rgb = `rgb(${parseInt(hex.slice(0, 2), 16)},${parseInt(hex.slice(2, 4), 16)},${parseInt(hex.slice(4), 16)})`;
-
-                const changedColors = colors.slice(0);
-                changedColors.splice(selectedInputValue.index, 1, rgb);
-                setColors(changedColors);
-
-                const changedHexColors = hexColors.slice(0);
-                changedHexColors.splice(selectedInputValue.index, 1, `#${hex}`);
-                setHexColors(changedHexColors);
-
-                setSelectedInputValue({ color: '', index: 0 });
-            }
-        }
-
-        window.addEventListener('click', handleClickOutsideSelect, true);
-        return () => window.removeEventListener('click', handleClickOutsideSelect, true);
-    }, [colors, hexColors, selectedInputValue]);
 
     const handleColorChange = (e: FormEvent<HTMLInputElement>, index: number) => setSelectedInputValue({ color: e.currentTarget.value, index });
 
@@ -99,11 +76,11 @@ export default function Create() {
                     <div className="fixed overflow-y-auto bg-white h-full w-[500px] p-5">
                         <h2 className="sticky top-0 text-2xl w-full text-center font-mono uppercase mb-5 font-bold">Create Palette</h2>
                         <div>
-                            <DefaultColorPalette onClick={onClick} />
-                            <NeutralColorPalette onClick={onClick} />
-                            <SimilarColorPalette hue={hue} saturation={saturation} onClick={onClick} />
-                            <OpacityColorPalette hue={hue} saturation={saturation} lightness={lightness} onClick={onClick} />
-                            <Form setName={setName} handleSave={handleSave} handleReset={handleReset} handleSelect={handleSelect} />
+                            <DefaultColorPalette onClick={handleClick} />
+                            <NeutralColorPalette onClick={handleClick} />
+                            <SimilarColorPalette hue={hue} saturation={saturation} onClick={handleClick} />
+                            <OpacityColorPalette hue={hue} saturation={saturation} lightness={lightness} onClick={handleClick} />
+                            <Form setName={setName} onSave={handleSave} onReset={handleReset} onSelect={handleSelect} />
                         </div>
                     </div>
                     <div className="w-full ml-[500px] p-5 flex items-center justify-center flex-col">
@@ -111,7 +88,15 @@ export default function Create() {
                             <h1 className="w-full text-center text-5xl mb-10 font-bold underline text-[#FAF4FF]">My Color Palette</h1>
                         </Link>
                         <div className="flex flex-col w-full border border-[#11052C] rounded-md overflow-hidden">
-                            <PalettePreview inputRef={inputRef} colors={colors} hexColors={hexColors} handleColorChange={handleColorChange} />
+                            <PalettePreview
+                                colors={colors}
+                                setColors={setColors}
+                                hexColors={hexColors}
+                                setHexColors={setHexColors}
+                                selectedInputValue={selectedInputValue}
+                                setSelectedInputValue={setSelectedInputValue}
+                                onColorChange={handleColorChange}
+                            />
                             <h3 className="text-[24px] text-center font-mono border-t border-[#11052C] text-black font-bold p-5 bg-white rounded-md rounded-t-none">{name}</h3>
                         </div>
                     </div>

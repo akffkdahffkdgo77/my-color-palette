@@ -1,6 +1,6 @@
-export interface IForm {
+export type FormPropsType = {
     setName: React.Dispatch<React.SetStateAction<string>>;
-    handleSave: (e: React.FormEvent<HTMLFormElement>) => void;
-    handleReset: () => void;
-    handleSelect: () => void;
-}
+    onSave: (e: React.FormEvent<HTMLFormElement>) => void;
+    onReset: () => void;
+    onSelect: () => void;
+};

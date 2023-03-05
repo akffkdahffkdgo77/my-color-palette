@@ -38,17 +38,9 @@
     },
     "rules": {
         "prettier/prettier": "off",
-        "import/extensions": [
-            "error",
-            "ignorePackages",
-            {
-                "js": "never",
-                "jsx": "never",
-                "ts": "never",
-                "tsx": "never",
-                "": "never"
-            }
-        ],
+        "react/no-array-index-key": "off",
+        "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
+        "import/extensions": ["error", "ignorePackages", { "js": "never", "jsx": "never", "ts": "never", "tsx": "never", "": "never" }],
         "import/order": [
             "error",
             {
@@ -76,22 +68,6 @@
                     "caseInsensitive": true /* ignore case. Options: [true, false] */
                 }
             }
-        ],
-        "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
-        "import/no-extraneous-dependencies": "off",
-        "react/function-component-definition": "off",
-        "no-param-reassign": "off",
-        "react/forbid-prop-types": "off",
-        "react/jsx-no-useless-fragment": "off",
-        "no-alert": "off",
-        "react/jsx-props-no-spreading": "off",
-        "no-return-assign": "off",
-        "react/no-unstable-nested-components": ["error", { "allowAsProps": true }],
-        "no-shadow": "off",
-        "no-nested-ternary": "off",
-        "no-unneeded-ternary": "off",
-        "react/no-array-index-key": "off",
-        "prefer-promise-reject-errors": "off",
-        "global-require": "off"
+        ]
     }
 }

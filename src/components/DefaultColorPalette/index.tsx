@@ -1,7 +1,8 @@
-import { IDefaultColorPalette } from 'components/DefaultColorPalette/types';
 import { generateColors } from 'utils';
 
-export default function DefaultColorPalette({ onClick }: IDefaultColorPalette) {
+import type { DefaultColorPalettePropsType } from 'components/DefaultColorPalette/types';
+
+export default function DefaultColorPalette({ onClick }: DefaultColorPalettePropsType) {
     return (
         <>
             <h3 className="text-lg font-mono font-bold uppercase">Color</h3>
