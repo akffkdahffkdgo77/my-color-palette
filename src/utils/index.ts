@@ -20,14 +20,17 @@ export function convertToHex(color: string) {
 export const COLORS = [
     {
         name: 'Rainbow',
+        tags: ['rainbow'],
         colors: ['#ef4444', '#f97316', '#eab308', '#22c55e', '#3b82f6', '#6366f1', '#a855f7']
     },
     {
         name: 'Pink',
+        tags: ['pink'],
         colors: ['#e91e63', '#e91e63e6', '#e91e63cc', '#e91e63b3', '#e91e6399', '#e81f6280', '#e81f6266', '#e81f624d', '#e81f6233', '#e81f621a']
     },
     {
         name: 'Blue',
+        tags: ['blue'],
         colors: ['#2196f3', '#2196f3e6', '#2196f3cc', '#2196f3b3', '#2196f399', '#2196f380', '#2196f366', '#2196f34d', '#2196f333', '#2196f31a']
     }
 ];
