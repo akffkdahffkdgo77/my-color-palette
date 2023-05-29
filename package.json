@@ -3,11 +3,13 @@
     "version": "1.0.0",
     "license": "MIT",
     "dependencies": {
+        "@heroicons/react": "^2.0.17",
         "html2canvas": "^1.4.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.6.1",
-        "react-scripts": "^5.0.1"
+        "react-scripts": "^5.0.1",
+        "zustand": "^4.3.7"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -37,6 +39,7 @@
         ]
     },
     "devDependencies": {
+        "@types/lodash": "^4.14.194",
         "@types/node": "^18.7.16",
         "@types/react": "^18.0.19",
         "@types/react-dom": "^18.0.6",
