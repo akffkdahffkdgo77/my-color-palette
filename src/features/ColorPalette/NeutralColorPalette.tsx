@@ -10,7 +10,7 @@ export default function NeutralColorPalette({ onClick }: NeutralColorPaletteType
     return (
         <>
             <ColorPaletteName title="Neutral" />
-            <div className="w-full flex items-center justify-start my-5 gap-x-[5px] gap-y-2.5 flex-wrap">
+            <div className="my-5 flex w-full flex-wrap items-center justify-start gap-x-[5px] gap-y-2.5">
                 {neutralColors().map((color, index) => (
                     <PaletteButton key={index} color={color} size="large" variant="rounded" onClick={onClick} />
                 ))}

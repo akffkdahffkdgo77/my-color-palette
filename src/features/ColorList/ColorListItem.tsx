@@ -30,8 +30,8 @@ export default function ColorListItem({ color }: ColorListItemType) {
     };
 
     return (
-        <li style={{ backgroundColor: color }} className="group w-full h-full flex items-end">
-            <button type="button" className={`${isCopied ? 'text-green-300' : 'text-[#FAF4FF]'} group-hover:inline p-[5px] text-[12px] hidden bg-[#9e9e9e4d]`} onClick={(e) => handleCopy(e, color)}>
+        <li style={{ backgroundColor: color }} className="group flex h-full w-full items-end">
+            <button type="button" className={`${isCopied ? 'text-green-300' : 'text-[#FAF4FF]'} hidden bg-[#9e9e9e4d] p-[5px] text-[12px] group-hover:inline`} onClick={(e) => handleCopy(e, color)}>
                 {color}
             </button>
         </li>

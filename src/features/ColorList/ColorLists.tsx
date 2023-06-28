@@ -15,7 +15,7 @@ export default function ColorLists() {
     }, []);
 
     return (
-        <div className="ml-[300px] p-10 flex flex-wrap gap-5 items-center justify-start">
+        <div className="ml-[300px] flex flex-wrap items-center justify-start gap-5 p-10">
             {colorList?.map(({ name, colors }, index) => (
                 <ColorsList key={`${name}-${index}`} name={name} colors={colors} />
             ))}

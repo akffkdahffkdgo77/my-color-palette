@@ -8,11 +8,11 @@ export default function Menu() {
     const { isOpen, setIsOpen } = useBoundStore((state) => ({ isOpen: state.isOpen, setIsOpen: state.setIsOpen }));
 
     return (
-        <nav className={`${isOpen ? 'w-full' : 'w-0 invisible'} transition-all [background:rgba(0,0,0,0.5)] fixed top-0 bottom-0 right-0 left-0 z-50 flex items-center justify-center`}>
-            <button type="button" className="absolute top-5 right-5 group" onClick={() => setIsOpen()}>
-                <XMarkIcon className="w-10 h-10 text-[#f5f5f5] group-hover:rotate-45 transition-all" />
+        <nav className={`${isOpen ? 'w-full' : 'invisible w-0'} fixed bottom-0 left-0 right-0 top-0 z-50 flex items-center justify-center transition-all [background:rgba(0,0,0,0.5)]`}>
+            <button type="button" className="group absolute right-5 top-5" onClick={() => setIsOpen()}>
+                <XMarkIcon className="h-10 w-10 text-[#f5f5f5] transition-all group-hover:rotate-45" />
             </button>
-            <ul className="text-[#F5F5F5] font-mono font-semibold text-xl text-center">
+            <ul className="text-center font-mono text-xl font-semibold text-[#F5F5F5]">
                 <li className="h-10 hover:animate-pulse">
                     <NavLink onClick={() => setIsOpen()} to="/" className={({ isActive }) => (isActive ? 'text-yellow-300' : '')}>
                         Home

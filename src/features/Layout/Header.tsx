@@ -6,9 +6,9 @@ export default function Header() {
     const setIsOpen = useBoundStore((state) => state.setIsOpen);
 
     return (
-        <header className="text-[#F5F5F5] bg-[#121212] border-b border-[#f5f5f5] fixed p-5 top-0 left-0 right-0 font-mono font-bold text-4xl flex items-center">
+        <header className="fixed left-0 right-0 top-0 flex items-center border-b border-[#f5f5f5] bg-[#121212] p-5 font-mono text-4xl font-bold text-[#F5F5F5]">
             <button type="button" title="메뉴 열기" onClick={() => setIsOpen()}>
-                <Bars3Icon className="w-10 h-10 mr-5" />
+                <Bars3Icon className="mr-5 h-10 w-10" />
             </button>
             <h1>My Color Palette</h1>
         </header>

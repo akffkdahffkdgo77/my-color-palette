@@ -8,9 +8,9 @@ export default function Create() {
     const isCollapsed = useBoundStore((state) => state.isCollapsed);
 
     return (
-        <section className="[min-height:calc(100vh-81px)] flex justify-between text-[#11052C]">
+        <section className="flex justify-between text-[#11052C] [min-height:calc(100vh-81px)]">
             <ColorPalettes />
-            <div className={`${isCollapsed ? 'ml-10' : 'ml-[300px]'} w-full p-5 flex flex-col items-center justify-center`}>
+            <div className={`${isCollapsed ? 'ml-10' : 'ml-[300px]'} flex w-full flex-col items-center justify-center p-5`}>
                 <Preview />
                 <InfoForm />
             </div>

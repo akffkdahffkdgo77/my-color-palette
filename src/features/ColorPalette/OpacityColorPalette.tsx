@@ -13,7 +13,7 @@ export default function OpacityColorPalette({ onClick }: OpacityColorPaletteType
     return (
         <>
             <ColorPaletteName title="Opacity" />
-            <div className="flex items-center gap-x-[5px] my-5">
+            <div className="my-5 flex items-center gap-x-[5px]">
                 {Array.from(Array(9)).map((_, index) => (
                     <PaletteButton key={index} variant="square" color={`hsla(${hue}deg, ${saturation}%, ${lightness}%, ${((index + 1) * 10) / 100})`} size="small" onClick={onClick} />
                 ))}

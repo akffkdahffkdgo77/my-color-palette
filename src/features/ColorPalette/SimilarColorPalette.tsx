@@ -13,7 +13,7 @@ export default function SimilarColorPalette({ onClick }: SimilarColorPaletteType
     return (
         <>
             <ColorPaletteName title="Similar" />
-            <div className="flex items-center gap-x-[5px] my-5">
+            <div className="my-5 flex items-center gap-x-[5px]">
                 {[90, 70, 50, 30, 20].map((value, index) => (
                     <PaletteButton key={index} color={`hsl(${hue}deg, ${saturation}%, ${value}%)`} size="" variant="square" onClick={onClick} />
                 ))}
