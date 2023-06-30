@@ -1,6 +1,6 @@
 import { StateCreator } from 'zustand';
 
-import { COLORS } from 'utils';
+import { COLORS } from '@utils/color';
 
 type ColorsType = {
     name: string;

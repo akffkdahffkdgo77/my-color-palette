@@ -3,5 +3,5 @@ type ColorPaletteNameType = {
 };
 
 export default function ColorPaletteName({ title }: ColorPaletteNameType) {
-    return <h3 className="text-lg font-mono font-bold uppercase">{title}</h3>;
+    return <h3 className="font-mono text-lg font-bold uppercase">{title}</h3>;
 }

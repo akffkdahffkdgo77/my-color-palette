@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { XMarkIcon } from '@heroicons/react/24/outline';
-
-import { useBoundStore } from 'lib/zustand/store';
+import { useBoundStore } from '@zustand/store';
 
 export default function Preview() {
     const divRef = useRef<HTMLDivElement | null>(null);
@@ -47,20 +46,20 @@ export default function Preview() {
     };
 
     return (
-        <div ref={divRef} className="bg-white border border-[#f5f5f5] w-[400px] max-h-[350px] custom-scroll overflow-y-auto rounded-b-none rounded-md overflow-hidden">
-            <ul className="w-full min-h-[300px] rounded-md border-[#FAF4FF] flex flex-col">
+        <div ref={divRef} className="custom-scroll max-h-[350px] w-[400px] overflow-hidden overflow-y-auto rounded-md rounded-b-none border border-[#f5f5f5] bg-white">
+            <ul className="flex min-h-[300px] w-full flex-col rounded-md border-[#FAF4FF]">
                 {colors?.map((color, index) => (
-                    <div key={`${color}-${index}`} className="relative group">
-                        <button type="button" onClick={() => handleDelete(index)} className="group-hover:visible invisible absolute z-10 top-[5px] right-[5px]">
-                            <XMarkIcon className="w-4 h-4 text-[#f5f5f5] bg-black border-white border rounded-full" />
+                    <div key={`${color}-${index}`} className="group relative">
+                        <button type="button" onClick={() => handleDelete(index)} className="invisible absolute right-[5px] top-[5px] z-10 group-hover:visible">
+                            <XMarkIcon className="h-4 w-4 rounded-full border border-white bg-black text-[#f5f5f5]" />
                         </button>
-                        <label htmlFor={`color-${index}`} style={{ backgroundColor: color }} className="relative block w-full h-full min-h-[50px] shadow-xl">
+                        <label htmlFor={`color-${index}`} style={{ backgroundColor: color }} className="relative block h-full min-h-[50px] w-full shadow-xl">
                             <input
                                 id={`color-${index}`}
                                 type="color"
                                 value={hexColors[index]}
                                 onChange={(e) => handleColorChange(e, index)}
-                                className="[transform:translate(-50%,-50%)] invisible absolute top-1/2 left-1/2"
+                                className="invisible absolute left-1/2 top-1/2 [transform:translate(-50%,-50%)]"
                             />
                         </label>
                     </div>

@@ -13,8 +13,8 @@ export default function PaletteButton({ color, size, variant, onClick }: Palette
             role="button"
             tabIndex={0}
             style={{ backgroundColor: color }}
-            className={`${size === 'small' ? 'w-[25px] h-[25px]' : size === 'large' ? 'w-[35px] h-[35px]' : ''} ${
-                variant === 'rounded' ? 'rounded-full border border-slate-600' : 'w-full h-5 border-2 border-[#11052C]'
+            className={`${size === 'small' ? 'h-[25px] w-[25px]' : size === 'large' ? 'h-[35px] w-[35px]' : ''} ${
+                variant === 'rounded' ? 'rounded-full border border-slate-600' : 'h-5 w-full border-2 border-[#11052C]'
             }`}
             onClick={(e) => onClick(e.currentTarget.style.backgroundColor, color)}
             onKeyDown={(e) => onClick(e.currentTarget.style.backgroundColor, color)}
