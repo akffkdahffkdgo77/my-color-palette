@@ -47,7 +47,7 @@ __*Clone Coding Color Palette Generator*__
 
 ```
 -- components        # re-usable components
--- features          # feature-related
+-- layout            # layout components
 -- lib               # configs/files for external libraries
 -- pages             # page
 -- routes            # router
