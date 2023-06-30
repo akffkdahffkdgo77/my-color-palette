@@ -1,11 +1,10 @@
 import { useCallback, useRef, useState } from 'react';
 
-import { PaintBrushIcon, StarIcon } from '@heroicons/react/24/outline';
 import _ from 'lodash';
 
-import { useBoundStore } from 'lib/zustand/store';
-
-import { COLORS } from 'utils';
+import { PaintBrushIcon, StarIcon } from '@heroicons/react/24/outline';
+import { COLORS } from '@utils/color';
+import { useBoundStore } from '@zustand/store';
 
 type ColorsType = {
     name: string;
@@ -41,6 +40,7 @@ export default function Aside() {
         searchByTag(search);
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleSearch = useCallback(
         _.debounce((newValue: string) => searchByName(newValue), 1000),
         []

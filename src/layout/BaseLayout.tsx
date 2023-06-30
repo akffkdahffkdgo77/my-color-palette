@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 
-import Header from 'features/Layout/Header';
-import Menu from 'features/Layout/Menu';
+import Header from './Header';
+import Menu from './Menu';
 
 export default function BaseLayout() {
     return (

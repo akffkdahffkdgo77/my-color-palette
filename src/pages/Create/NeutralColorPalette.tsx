@@ -1,6 +1,6 @@
-import ColorPaletteName from 'features/ColorPalette/ColorPaletteName';
-import PaletteButton from 'features/ColorPalette/PaletteButton';
-import { neutralColors } from 'utils';
+import { ColorPaletteName, PaletteButton } from '@components';
+
+import { neutralColors } from '@utils/color';
 
 type NeutralColorPaletteType = {
     onClick: (rgb: string, color: string) => void;

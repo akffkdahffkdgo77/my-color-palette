@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { XMarkIcon } from '@heroicons/react/24/outline';
-
-import { useBoundStore } from 'lib/zustand/store';
+import { useBoundStore } from '@zustand/store';
 
 export default function Preview() {
     const divRef = useRef<HTMLDivElement | null>(null);

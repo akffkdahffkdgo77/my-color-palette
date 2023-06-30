@@ -1,6 +1,6 @@
 import { StateCreator } from 'zustand';
 
-import { OPACITY, convertToHex } from 'utils';
+import { OPACITY, convertToHex } from '@utils/color';
 
 export interface FormSlice {
     isCollapsed: boolean;

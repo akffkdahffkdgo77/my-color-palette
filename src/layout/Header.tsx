@@ -1,6 +1,7 @@
-import { Bars3Icon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
-import { useBoundStore } from 'lib/zustand/store';
+import { Bars3Icon } from '@heroicons/react/24/outline';
+import { useBoundStore } from '@zustand/store';
 
 export default function Header() {
     const setIsOpen = useBoundStore((state) => state.setIsOpen);
@@ -10,7 +11,9 @@ export default function Header() {
             <button type="button" title="메뉴 열기" onClick={() => setIsOpen()}>
                 <Bars3Icon className="mr-5 h-10 w-10" />
             </button>
-            <h1>My Color Palette</h1>
+            <Link to="/">
+                <h1>My Color Palette</h1>
+            </Link>
         </header>
     );
 }

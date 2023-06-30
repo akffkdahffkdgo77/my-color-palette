@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { MagnifyingGlassIcon, PaintBrushIcon } from '@heroicons/react/24/outline';
-
-import { useBoundStore } from 'lib/zustand/store';
+import { useBoundStore } from '@zustand/store';
 
 export default function InfoForm() {
     const [tags, setTags] = useState('');

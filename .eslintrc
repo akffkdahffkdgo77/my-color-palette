@@ -33,6 +33,7 @@
         }
     },
     "rules": {
+        "react/no-array-index-key": "off",
         "import/extensions": "off",
         "no-nested-ternary": "off",
         "no-restricted-exports": "off",

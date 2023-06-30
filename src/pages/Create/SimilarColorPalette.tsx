@@ -1,7 +1,6 @@
-import { useBoundStore } from 'lib/zustand/store';
+import { ColorPaletteName, PaletteButton } from '@components';
 
-import ColorPaletteName from 'features/ColorPalette/ColorPaletteName';
-import PaletteButton from 'features/ColorPalette/PaletteButton';
+import { useBoundStore } from '@zustand/store';
 
 type SimilarColorPaletteType = {
     onClick: (rgb: string, color: string) => void;
