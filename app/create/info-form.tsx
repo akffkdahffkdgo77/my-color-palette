@@ -10,7 +10,7 @@ import { useBoundStore } from '@zustand/store';
 
 export default function InfoForm() {
     const navigate = useRouter();
-    const hexColors = useBoundStore((state) => state.hexColors);
+    const { hexColors, init: reset, setColorList } = useBoundStore();
     const [tags, setTags] = useState('');
     const [name, setName] = useState('');
 
@@ -19,6 +19,8 @@ export default function InfoForm() {
             const prev = getLocalStorage('colors') ?? [];
             const newColors = [...prev, { idx: (prev?.[prev.length - 1]?.idx ?? 0) + 1, name: name || 'MY COLOR PALETTE', tags: [tags], colors: hexColors }];
             setLocalStorage('colors', newColors);
+            setColorList(newColors);
+            reset();
             navigate.push('/list');
         }
     };

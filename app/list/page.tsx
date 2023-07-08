@@ -20,8 +20,10 @@ export default function List() {
         const savedColorList = getLocalStorage('colors');
         if (!savedColorList.length) {
             setLocalStorage('colors', COLORS);
+            setColorList(savedColorList);
+        } else if (!colorList.length) {
+            setColorList(savedColorList);
         }
-        setColorList(getLocalStorage('colors'));
     }, []);
 
     const handleDownload = async (e: React.MouseEvent<HTMLButtonElement>) => {

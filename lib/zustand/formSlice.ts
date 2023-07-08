@@ -11,6 +11,7 @@ export interface FormSlice {
     hue: number;
     saturation: number;
     lightness: number;
+    init: () => void;
     setIsCollapsed: () => void;
     setColors: (newColors: string[]) => void;
     setHexColors: (newColors: string[]) => void;
@@ -23,13 +24,18 @@ export interface FormSlice {
 const DEFAULT_COLORS = ['hsl(0, 0%, 7%, 1)', 'hsl(0, 0%, 96%, 1)', 'hsl(0, 0%, 7%, 1)', 'hsl(0, 0%, 96%, 1)', 'hsl(0, 0%, 7%, 1)', 'hsl(0, 0%, 96%, 1)'];
 const DEFAULT_HEX_COLORS = ['#121212', '#f5f5f5', '#121212', '#f5f5f5', '#121212', '#f5f5f5'];
 
-export const createFormSlice: StateCreator<FormSlice> = (set) => ({
+const initialValues = {
     isCollapsed: true,
     colors: DEFAULT_COLORS,
     hexColors: DEFAULT_HEX_COLORS,
     hue: 258,
     saturation: 80,
-    lightness: 10,
+    lightness: 10
+};
+
+export const createFormSlice: StateCreator<FormSlice> = (set) => ({
+    ...initialValues,
+    init: () => set(() => initialValues),
     handleChangeColor: (rgb: string, color: string) =>
         set((state) => {
             const isRGBA = !rgb.includes('rgb(');
