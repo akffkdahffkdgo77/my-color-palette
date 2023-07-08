@@ -1,17 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./src/**/*.{js,jsx,ts,tsx}'],
+    content: ['./layouts/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
     theme: {
         extend: {
             keyframes: {
-                spin: {
+                slowSpin: {
                     to: {
                         transform: 'rotate(360deg)'
                     }
                 }
             },
             animation: {
-                spin: 'spin 30s linear infinite'
+                slowSpin: 'slowSpin 30s linear infinite'
             },
             boxShadow: {
                 custom: '0 25px 50px -19px rgb(0 0 0 / 0.6)'

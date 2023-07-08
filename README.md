@@ -2,7 +2,7 @@
 <img width="1491" alt="스크린샷 2023-05-29 오전 11 28 50" src="https://github.com/akffkdahffkdgo77/my-color-palette/assets/52883505/bbcee349-c9e4-41ee-99c0-457299efea84">
 <img width="1508" alt="스크린샷 2023-05-29 오전 11 45 49" src="https://github.com/akffkdahffkdgo77/my-color-palette/assets/52883505/451d168c-2df9-4cbf-a361-221e40b81815">
 
-***
+---
 
 <div>
   <a href="https://github.com/namiein/weekly-clone-coding">
@@ -26,30 +26,19 @@
 
 ### 🗒️ Project Description
 
-__*Clone Coding Color Palette Generator*__
-    
+**_Clone Coding Color Palette Generator_**
+
 ### 😎 Project Features
 
-- [x] 홈
-- [x] 생성한 Palette 리스트 및 검색 페이지   
-   - [x] png 다운로드   
-   - [x] 검색
-- [x] Palette 등록 페이지
-   - [x] 기본 색상 Color Picker   
-   - [x] Neutral Color Picker (검정 <-> 흰색)   
-   - [x] 비슷한 색상을 보여주기   
-   - [x] 선택한 색상의 opacity 보여주기   
-   - [x] Palette 이름 입력   
-   - [x] 초기화, 선택, 저장 기능   
-   - [x] 선택한 색상 변경하기   
-   
-### 📁 Folder Structure
-
-```
--- components        # re-usable components
--- layout            # layout components
--- lib               # configs/files for external libraries
--- pages             # page
--- routes            # router
--- styles            # tailwindcss
-```
+-   [x] 홈
+-   [x] 생성한 Palette 리스트 및 검색 페이지
+    -   [x] png 다운로드
+    -   [x] 검색
+-   [x] Palette 등록 페이지
+    -   [x] 기본 색상 Color Picker
+    -   [x] Neutral Color Picker (검정 <-> 흰색)
+    -   [x] 비슷한 색상을 보여주기
+    -   [x] 선택한 색상의 opacity 보여주기
+    -   [x] Palette 이름 입력
+    -   [x] 초기화, 선택, 저장 기능
+    -   [x] 선택한 색상 변경하기
