@@ -1,3 +1,68 @@
 {
-  "extends": "next/core-web-vitals"
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": ["plugin:react/recommended", "airbnb", "plugin:@typescript-eslint/recommended", "prettier", "plugin:prettier/recommended", "plugin:react/jsx-runtime"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["react", "@typescript-eslint", "prettier", "import"],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            },
+            "typescript": {
+                "directory": "."
+            }
+        }
+    },
+    "rules": {
+        "import/extensions": "off",
+        "no-restricted-exports": "off",
+        "react/require-default-props": "off",
+        "react/jsx-props-no-spreading": "off",
+        "import/prefer-default-export": "off",
+        "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "import/order": [
+            "error",
+            {
+                "groups": ["builtin", "external", "internal", ["parent", "sibling"], "index", "object", "type"],
+                "pathGroups": [
+                    {
+                        "pattern": "{next*/**,next/**,react*,react*/**}",
+                        "group": "external",
+                        "position": "before"
+                    },
+                    {
+                        "pattern": "{@components/**,@layouts/**}",
+                        "group": "external",
+                        "position": "before"
+                    },
+                    {
+                        "pattern": "{@zustand/**,@utils/**,@styles/**,@heroicons/**,*.+(css|scss)}",
+                        "patternOptions": {
+                            "dot": true,
+                            "nocomment": true,
+                            "matchBase": true
+                        },
+                        "group": "object",
+                        "position": "after"
+                    }
+                ],
+                "pathGroupsExcludedImportTypes": ["react"],
+                "newlines-between": "always",
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                }
+            }
+        ]
+    }
 }
