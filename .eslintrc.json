@@ -26,9 +26,11 @@
     "rules": {
         "import/extensions": "off",
         "no-restricted-exports": "off",
+        "react/no-array-index-key": "off",
         "react/require-default-props": "off",
         "react/jsx-props-no-spreading": "off",
         "import/prefer-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
         "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
         "import/order": [
             "error",
@@ -41,7 +43,7 @@
                         "position": "before"
                     },
                     {
-                        "pattern": "{@components/**,@layouts/**}",
+                        "pattern": "{@components*,@components/**@layouts*,,@layouts/**}",
                         "group": "external",
                         "position": "before"
                     },

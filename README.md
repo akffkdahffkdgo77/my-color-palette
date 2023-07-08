@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![my-color-palette-v1](https://github.com/akffkdahffkdgo77/my-color-palette/assets/52883505/12153a08-6218-4812-9cdc-5d081ae7f2ed)
+<img width="1491" alt="스크린샷 2023-05-29 오전 11 28 50" src="https://github.com/akffkdahffkdgo77/my-color-palette/assets/52883505/bbcee349-c9e4-41ee-99c0-457299efea84">
+<img width="1508" alt="스크린샷 2023-05-29 오전 11 45 49" src="https://github.com/akffkdahffkdgo77/my-color-palette/assets/52883505/451d168c-2df9-4cbf-a361-221e40b81815">
 
-## Getting Started
+---
 
-First, run the development server:
+<div>
+  <a href="https://github.com/namiein/weekly-clone-coding">
+    <img src="https://img.shields.io/badge/Part%203-Weekly%20Clone%20Coding-blue?style=flat" alt="Part 3" />
+  </a>
+  <img src="https://img.shields.io/badge/v1-2022--10--09%20~%202022--10--15-ff69b4?style=flat" alt="v1" />
+  <img src="https://img.shields.io/badge/v2-2023--03%20~%202023--04-ff69b4?style=flat" alt="v2" />
+  <br/>
+  <img src="https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/React_Router-CA4245?style=flat&logo=react-router&logoColor=white" alt="React Router" />
+  <img src="https://img.shields.io/badge/-html2canvas-black?style=flat" alt="html2canvas" />
+  <img src="https://img.shields.io/badge/-zustand-black?style=flat" alt="zustand" />
+  <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
+  <img src="https://img.shields.io/badge/-heroicons-8B5CF6?style=flat" alt="heroicons" />
+  <img src="https://img.shields.io/badge/yarn-%232C8EBB.svg?style=flat&logo=yarn&logoColor=white" alt="Yarn" />
+  <img src="https://img.shields.io/badge/ESLint-4B3263?style=flat&logo=eslint&logoColor=white" alt="ESLint" />
+  <img src="https://img.shields.io/badge/Airbnb-%23ff5a5f.svg?style=flat&logo=Airbnb&logoColor=white" alt="Airbnb" />
+  <img src="https://img.shields.io/badge/prettier-1A2C34?style=flat&logo=prettier&logoColor=F7BA3E" alt="Prettier" />
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### 🗒️ Project Description
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**_Clone Coding Color Palette Generator_**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 😎 Project Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-   [x] 홈
+-   [x] 생성한 Palette 리스트 및 검색 페이지
+    -   [x] png 다운로드
+    -   [x] 검색
+-   [x] Palette 등록 페이지
+    -   [x] 기본 색상 Color Picker
+    -   [x] Neutral Color Picker (검정 <-> 흰색)
+    -   [x] 비슷한 색상을 보여주기
+    -   [x] 선택한 색상의 opacity 보여주기
+    -   [x] Palette 이름 입력
+    -   [x] 초기화, 선택, 저장 기능
+    -   [x] 선택한 색상 변경하기

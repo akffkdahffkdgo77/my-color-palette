@@ -11,11 +11,16 @@
         "lint:fix": "eslint --fix \"**/*.{ts,tsx}\""
     },
     "dependencies": {
+        "@heroicons/react": "^2.0.18",
+        "classnames": "^2.3.2",
+        "html2canvas": "^1.4.1",
         "next": "13.4.9",
         "react": "18.2.0",
-        "react-dom": "18.2.0"
+        "react-dom": "18.2.0",
+        "zustand": "^4.3.9"
     },
     "devDependencies": {
+        "@types/lodash": "^4.14.195",
         "@types/node": "20.4.0",
         "@types/react": "18.2.14",
         "@types/react-dom": "18.2.6",
@@ -31,8 +36,9 @@
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-react": "^7.28.0",
         "eslint-plugin-react-hooks": "^4.3.0",
+        "lodash": "^4.17.21",
         "postcss": "8.4.25",
-        "prettier": "^3.0.0",
+        "prettier": "^2.5.1",
         "prettier-plugin-tailwindcss": "^0.3.0",
         "tailwindcss": "3.3.2",
         "typescript": "5.1.6"

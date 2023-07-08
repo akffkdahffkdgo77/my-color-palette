@@ -24,6 +24,8 @@
             "@app/*": ["./app/*"],
             "@components": ["./components/index.ts"],
             "@components/*": ["./components/*"],
+            "@layouts": ["./layouts/index.ts"],
+            "@layouts/*": ["./layouts/*"],
             "@zustand/*": ["./lib/zustand/*"],
             "@utils/*": ["./utils/*"]
         }
