@@ -1,25 +1,20 @@
-<picture>
-  <source media="(max-width: 799px)" srcset="https://github.com/akffkdahffkdgo77/my-color-palette/assets/52883505/64b23207-7fb4-4945-a45c-b936b8d284fd" />
-  <source media="(min-width: 800px)" srcset="https://github.com/akffkdahffkdgo77/my-color-palette/assets/52883505/3cde1cff-2b17-430d-8e67-1f2eaf6e9ee4" />
-  <img width="1500" src="[https://github.com/akffkdahffkdgo77/weekly-clone-coding/assets/52883505/edb04826-efca-4a44-8fff-de1f665e1a0d](https://github.com/akffkdahffkdgo77/my-color-palette/assets/52883505/3cde1cff-2b17-430d-8e67-1f2eaf6e9ee4)" alt="my color palette header" />
-</picture>
-<br/>
+<img src="https://capsule-render.vercel.app/api?section=header&type=waving&height=300&text=My%20Color%20Palette&color=gradient&fontSize=90&customColorList=0,2,2,5,30" alt="" />
 <table>
   <tbody>
     <tr>
-      <th align="left" width="200">프로젝트 소개</th>
+      <th align="left" width="200">Project Description</th>
       <td><strong><i>Clone Coding Color Palette Generator</i></strong></td>
     </tr>
     <tr>
-      <th align="left" width="200">Weekly Clone Coding</th>
+      <th align="left" width="200">Project Group</th>
       <td>
-        <a href="https://github.com/akffkdahffkdgo77/weekly-clone-coding">
-          <img src="https://img.shields.io/badge/Part%203-Weekly%20Clone%20Coding-blue?style=flat" alt="Part 3" />
+        <a href="https://github.com/akffkdahffkdgo77/my-toy-projects">
+          <img src="https://img.shields.io/badge/NO%203-My%20Toy%20Projects-blue?style=flat" alt="NO 3" />
         </a>
       </td>
     </tr>
     <tr>
-      <th align="left" width="200">Tech Stacks</th>
+      <th align="left" width="200">Project Tech Stacks</th>
       <td>
         <div>
           <img src="https://img.shields.io/badge/Next-black?style=flat&logo=next.js&logoColor=white" alt="NextJS" />
@@ -40,7 +35,7 @@
       </td>
     </tr>
     <tr>
-      <th align="left" width="200">프로젝트 상태</th>
+      <th align="left" width="200">Project Status</th>
       <td>
         <img src="https://img.shields.io/badge/v1.0-2022--10--09%20~%202022--10--15-ffe5ec?style=flat" alt="v1.0" />
         <br/>
