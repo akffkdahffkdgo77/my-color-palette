@@ -3,7 +3,7 @@
   <tbody>
     <tr>
       <th align="left" width="200">Project Description</th>
-      <td><strong><i>Clone Coding Color Palette Generator</i></strong></td>
+      <td><strong><i>나만의 🎨 만들기 </i></strong></td>
     </tr>
     <tr>
       <th align="left" width="200">Project Group</th>
@@ -47,6 +47,41 @@
   </tbody>
 </table>
 
+## Project History
+
+### 😎 v1.0
+
+-   [x] 홈
+-   [x] 생성한 Palette 리스트 및 검색 페이지
+    -   [x] png 다운로드
+    -   [x] 검색
+-   [x] Palette 등록 페이지
+    -   [x] 기본 색상 Color Picker
+    -   [x] Neutral Color Picker (검정 <-> 흰색)
+    -   [x] 비슷한 색상을 보여주기
+    -   [x] 선택한 색상의 opacity 보여주기
+    -   [x] Palette 이름 입력
+    -   [x] 초기화, 선택, 저장 기능
+    -   [x] 선택한 색상 변경하기
+
+### 🚀 v1.0.1
+
+-  [x] Code Refactoring
+-  [x] 폴더 구조 변경
+
+### 🚀 v1.1
+
+-  [x] NextJS Migration
+-  [x] 팔레트 삭제 기능 추가
+-  [x] 버그 수정
+-  [x] UI 수정
+
+### 🔮 v1.2 (여름 / 가을 업데이트)
+
+-  [ ] export / import
+-  [ ] 검색 기능 고도화
+-  [ ] 태그 추가 기능 고도화
+
 ## Demo
 
 ### 홈 화면
@@ -76,32 +111,3 @@
 
 ### 팔레트 생성 - 2
 <img width="700" src="https://github.com/akffkdahffkdgo77/my-color-palette/assets/52883505/b72316da-aea9-47a5-a3f5-e0def4795c4c" alt="color palette button create demo" />
-
-## Project History
-
-### 😎 v1.0
-
--   [x] 홈
--   [x] 생성한 Palette 리스트 및 검색 페이지
-    -   [x] png 다운로드
-    -   [x] 검색
--   [x] Palette 등록 페이지
-    -   [x] 기본 색상 Color Picker
-    -   [x] Neutral Color Picker (검정 <-> 흰색)
-    -   [x] 비슷한 색상을 보여주기
-    -   [x] 선택한 색상의 opacity 보여주기
-    -   [x] Palette 이름 입력
-    -   [x] 초기화, 선택, 저장 기능
-    -   [x] 선택한 색상 변경하기
-
-### 🚀 v1.0.1
-
--  [x] Code Refactoring
--  [x] 폴더 구조 변경
-
-### 🚀 v1.1
-
--  [x] NextJS Migration
--  [x] 팔레트 삭제 기능 추가
--  [x] 버그 수정
--  [x] UI 수정
